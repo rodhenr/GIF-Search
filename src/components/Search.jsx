@@ -1,6 +1,6 @@
 import "../styles/search.scss";
 
-function Search({handleChange, item, getGif, getTrending, trending}) {
+function Search({ handleChange, item, getGif, getTrending, trending }) {
   return (
     <div className="containerSearch">
       <h1>GIF SEARCH</h1>
@@ -13,8 +13,10 @@ function Search({handleChange, item, getGif, getTrending, trending}) {
           value={item}
           placeholder="Procure por algum GIF"
         />
-        <button onClick={getGif}>PROCURAR</button>
-        <button onClick={getTrending}>Populares</button>
+        <div className="searchButtons">
+          <button onClick={getGif}>Procurar</button>
+          <button onClick={getTrending}>Populares</button>
+        </div>
       </div>
     </div>
   );
