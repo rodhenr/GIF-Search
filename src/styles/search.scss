@@ -11,7 +11,7 @@
   h1 {
     cursor: pointer;
     font-family: "Poppins", sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin: 0;
   }
 
@@ -23,13 +23,13 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.6rem;
 
   input {
     border: 1px solid #231f20;
     border-radius: 8px;
     box-sizing: border-box;
-    height: 45px;
+    height: 40px;
     padding: 0 1rem;
     width: 300px;
   }
@@ -47,38 +47,50 @@
   }
 }
 
-.searchButtons {
+.botoes {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
 
   button {
-    background-color: #231f20;
-    border: 1px solid #231f20;
-    color: #d7df23;
+    color: #fff;
     cursor: pointer;
     font-size: 0.8rem;
     height: 40px;
+    overflow: hidden;
+    position: relative;
     width: 120px;
 
     &:hover {
-      background-color: #4e4e4e;
-      border: 1px solid #4e4e4e;
+      background-color: transparent;
+      transition: 0.7s;
     }
 
-    &:last-of-type {
-      background-color: #ff4d5a;
-      color: #fff;
-
-      &:hover {
-        background-color: #ef5454;
-        border: 1px solid #ef5454;
-      }
+    &:not(hover) {
+      transition: 1s;
     }
   }
 
   @media (min-width: 900px) {
     button {
-      width: 120px;
+      width: 180px;
     }
+  }
+}
+
+.botaoUm {
+  background-color: #231f20;
+  border: 1px solid #231f20;
+
+  &:hover {
+    color: #231f20;
+  }
+}
+
+.botaoDois {
+  background-color: #ff4d5a;
+  border: 1px solid #ff4d5a;
+
+  &:hover {
+    color: #ff4d5a;
   }
 }

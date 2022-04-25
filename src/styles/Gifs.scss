@@ -105,20 +105,27 @@
   padding-bottom: 3rem;
 
   button {
-    background-color: #d7df23;
-    border: none;
+    background-color: transparent;
+    border: 1px solid #d7df23;
+    color: #d7df23;
     cursor: pointer;
-
     height: 50px;
     width: 300px;
 
     &:hover {
-      background-color: #dbdf8a;
+      background-color: #d7df23;
+      color: #231f20;
+      transform: translateY(-7px);
+      transition: 0.5s;
+    }
+
+    &:not(hover) {
+      transition: 0.5s;
     }
   }
 
   a {
-    color: #231f20;
+    color: inherit;
     font-family: "Montserrat", sans-serif;
     font-size: 1.5rem;
     text-decoration: none;

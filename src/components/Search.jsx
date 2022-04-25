@@ -13,9 +13,9 @@ function Search({ handleChange, item, getGif, getTrending, trending }) {
           value={item}
           placeholder="Procure por algum GIF"
         />
-        <div className="searchButtons">
-          <button onClick={getGif}>Procurar</button>
-          <button onClick={getTrending}>Populares</button>
+        <div className="botoes">
+          <button className="botaoUm" onClick={getGif}>PROCURAR</button>
+          <button className="botaoDois" onClick={getTrending}>POPULARES</button>
         </div>
       </div>
     </div>
