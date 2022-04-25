@@ -11,7 +11,7 @@ function Gifs({ data }) {
               </a>
             </div>
           ))
-        : null}
+        : <p>Pesquise por algum termo para ver os GIFs!</p>}
     </div>
   );
 }
