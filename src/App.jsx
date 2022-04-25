@@ -12,6 +12,7 @@ function App() {
   const [trending, setTrending] = useState([]);
   const [item, setItem] = useState("");
   const [loading, setLoading] = useState(false);
+  const [anterior, setAnterior] = useState("");
 
   const limit = 25;
   const url = `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${item}&limit=${limit}`;
@@ -23,26 +24,29 @@ function App() {
   }
 
   function getGif() {
-    setLoading(true);
-    if (item === "") {
+    if (item === "" || item === anterior) {
       return;
     } else {
+      setLoading(true);
       axios.get(url).then((response) => {
         const newData = response.data.data;
         setData([...newData]);
       });
       setData([]);
       setTrending([]);
+      setAnterior(item);
     }
     setTimeout(() => setLoading(false), 3000);
   }
 
   function getTrending() {
+    setLoading(true);
     setData([]);
     axios.get(urlTrending).then((response) => {
       const newData = response.data.data;
       setTrending([...newData]);
     });
+    setTimeout(() => setLoading(false), 3000);
   }
 
   return (
@@ -54,23 +58,13 @@ function App() {
         getTrending={getTrending}
       />
       {loading ? (
-        <div class="lds-default">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+        <div className="containerLoader">
+          <div class="loader"></div>
+          <p>Carregando</p>
         </div>
       ) : null}
       <div className={loading ? "hidden" : null}>
-        <Gifs data={data} trending={trending} />
+        <Gifs data={data} trending={trending} anterior={anterior} />
       </div>
     </div>
   );

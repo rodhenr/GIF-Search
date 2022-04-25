@@ -5,11 +5,9 @@
   justify-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 1.5rem 0;
 
   @media (min-width: 700px) {
     grid-template-columns: repeat(3, 200px);
-    padding: 3rem 0;
   }
 
   @media (min-width: 1024px) {
@@ -24,28 +22,31 @@
 .gifItem {
   display: flex;
 
-
-  img, a {
+  img,
+  a {
     height: 170px;
     width: 170px;
   }
 
   @media (min-width: 700px) {
-    img, a {
+    img,
+    a {
       height: 200px;
       width: 200px;
     }
   }
 
   @media (min-width: 1024px) {
-    img, a {
+    img,
+    a {
       height: 220px;
       width: 220px;
     }
   }
 
   @media (min-width: 1300px) {
-    img, a {
+    img,
+    a {
       height: 240px;
       width: 240px;
     }
@@ -72,5 +73,26 @@
     p {
       font-size: 2.5rem;
     }
+  }
+}
+
+.containerSearchInfo {
+  border-bottom: 1px solid white;
+  color: #d7df23;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 1rem;
+  width: calc(1200px + 4rem);
+  padding: 4rem 0 0.3rem;
+
+  p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  span {
+    color: #f32a2a;
+    font-weight: 600;
   }
 }
