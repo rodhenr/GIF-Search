@@ -1,7 +1,7 @@
 .containerComGifs {
   display: grid;
   grid-template-columns: repeat(2, 170px);
-  gap: 0.5rem;
+  gap: 1rem;
   justify-items: center;
   justify-content: center;
   overflow: hidden;
@@ -22,27 +22,30 @@
 }
 
 .gifItem {
-  img {
+  display: flex;
+
+
+  img, a {
     height: 170px;
     width: 170px;
   }
 
   @media (min-width: 700px) {
-    img {
+    img, a {
       height: 200px;
       width: 200px;
     }
   }
 
   @media (min-width: 1024px) {
-    img {
+    img, a {
       height: 220px;
       width: 220px;
     }
   }
 
   @media (min-width: 1300px) {
-    img {
+    img, a {
       height: 240px;
       width: 240px;
     }
