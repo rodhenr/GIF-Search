@@ -1,0 +1,11 @@
+.containerGifs {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+
+  img {
+    height: 200px;
+    width: 200px;
+  }
+}
