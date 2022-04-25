@@ -1,17 +1,33 @@
 import "../styles/Gifs.scss";
 
-function Gifs({ data }) {
+function Gifs({ data, trending }) {
   return (
-    <div className="containerGifs">
-      {data.length > 0
-        ? data.map((i) => (
-            <div>
+    <div>
+      {data.length === 0 && trending.length === 0 ? (
+        <div className="containerSemGifs">
+          <p>Nenhum item encontrado!</p>
+        </div>
+      ) : data.length > 0 ? (
+        <div className="containerComGifs">
+          {data.map((i) => (
+            <div className="gifItem">
               <a href={i.bitly_gif_url} target="_blank" rel="noreferrer">
                 <img src={i.images.downsized.url} alt="gif" />
               </a>
             </div>
-          ))
-        : <p>Pesquise por algum termo para ver os GIFs!</p>}
+          ))}
+        </div>
+      ) : trending.length > 0 ? (
+        <div className="containerComGifs">
+          {trending.map((i) => (
+            <div className="gifItem">
+              <a href={i.bitly_gif_url} target="_blank" rel="noreferrer">
+                <img src={i.images.downsized.url} alt="gif" />
+              </a>
+            </div>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }
