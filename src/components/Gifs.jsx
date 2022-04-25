@@ -26,6 +26,17 @@ function Gifs({ data, trending, anterior }) {
               </div>
             ))}
           </div>
+          <div className="verMais">
+            <button>
+              <a
+                href={`https://giphy.com/search/${anterior}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                VER MAIS
+              </a>
+            </button>
+          </div>
         </>
       ) : trending.length > 0 ? (
         <div className="containerComGifs">

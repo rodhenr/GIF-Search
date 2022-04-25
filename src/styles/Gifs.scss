@@ -5,6 +5,7 @@
   justify-items: center;
   justify-content: center;
   overflow: hidden;
+  padding-bottom: 3rem;
 
   @media (min-width: 700px) {
     grid-template-columns: repeat(3, 200px);
@@ -92,7 +93,34 @@
   }
 
   span {
-    color: #f32a2a;
+    color: #ff4d5a;
     font-weight: 600;
+  }
+}
+
+.verMais {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3rem;
+
+  button {
+    background-color: #d7df23;
+    border: none;
+    cursor: pointer;
+
+    height: 50px;
+    width: 300px;
+
+    &:hover {
+      background-color: #dbdf8a;
+    }
+  }
+
+  a {
+    color: #231f20;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
   }
 }
