@@ -59,7 +59,7 @@ function App() {
       />
       {loading ? (
         <div className="containerLoader">
-          <div class="loader"></div>
+          <div className="loader"></div>
           <p>Carregando</p>
         </div>
       ) : null}

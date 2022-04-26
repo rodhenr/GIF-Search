@@ -18,8 +18,8 @@ function Gifs({ data, trending, anterior }) {
             </p>
           </div>
           <div className="containerComGifs">
-            {data.map((i) => (
-              <div className="gifItem">
+            {data.map((i, key) => (
+              <div className="gifItem" key={key}>
                 <a href={i.bitly_gif_url} target="_blank" rel="noreferrer">
                   <img src={i.images.downsized.url} alt="gif" />
                 </a>
