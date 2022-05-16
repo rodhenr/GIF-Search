@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/GIF-Search/static/css/main.e4b262d0.css",
+    "main.js": "/GIF-Search/static/js/main.8c3b082a.js",
+    "static/js/787.c2e8296f.chunk.js": "/GIF-Search/static/js/787.c2e8296f.chunk.js",
+    "index.html": "/GIF-Search/index.html",
+    "main.e4b262d0.css.map": "/GIF-Search/static/css/main.e4b262d0.css.map",
+    "main.8c3b082a.js.map": "/GIF-Search/static/js/main.8c3b082a.js.map",
+    "787.c2e8296f.chunk.js.map": "/GIF-Search/static/js/787.c2e8296f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e4b262d0.css",
+    "static/js/main.8c3b082a.js"
+  ]
+}
