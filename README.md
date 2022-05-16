@@ -1,4 +1,4 @@
-Essa é uma aplicação simples que usa a API do [Giphy](giphy.com) para procurar por gifs de acordo com o termo digitado pelo usuário.
+Essa é uma aplicação simples que usa a API do [Giphy](https://giphy.com/) para procurar por gifs de acordo com o termo digitado pelo usuário.
 
 Para este projeto foram utilizadas as seguintes tecnologias:
 
