@@ -5,7 +5,7 @@ function Gifs({ data, trending, anterior }) {
     <div>
       {data.length === 0 && trending.length === 0 ? (
         <div className="containerSemGifs">
-          <p>Nenhum item encontrado!</p>
+          <p>Nenhum item pesquisado/encontrado</p>
         </div>
       ) : data.length > 0 ? (
         <>

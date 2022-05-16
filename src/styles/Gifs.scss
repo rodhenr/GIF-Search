@@ -82,8 +82,7 @@
   color: #d7df23;
   display: flex;
   justify-content: space-between;
-  margin: 0 auto 1rem;
-  width: calc(1200px + 4rem);
+  margin: 0 1rem 1rem;
   padding: 4rem 0 0.3rem;
 
   p {
@@ -95,6 +94,19 @@
   span {
     color: #ff4d5a;
     font-weight: 600;
+  }
+
+  @media (min-width: 700px) {
+    margin: 0 auto 1rem;
+    width: calc(600px + 2rem);
+  }
+
+  @media (min-width: 1024px) {
+    width: calc(880px + 3rem);
+  }
+
+  @media (min-width: 1300px) {
+    width: calc(1200px + 4rem);
   }
 }
 

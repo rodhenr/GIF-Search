@@ -36,7 +36,7 @@ function App() {
       setTrending([]);
       setAnterior(item);
     }
-    setTimeout(() => setLoading(false), 3000);
+    setTimeout(() => setLoading(false), 1500);
   }
 
   function getTrending() {
@@ -46,7 +46,7 @@ function App() {
       const newData = response.data.data;
       setTrending([...newData]);
     });
-    setTimeout(() => setLoading(false), 3000);
+    setTimeout(() => setLoading(false), 1500);
   }
 
   return (
