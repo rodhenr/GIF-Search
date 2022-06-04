@@ -14,7 +14,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [anterior, setAnterior] = useState("");
 
-  const limit = 5;
+  const limit = 20;
   const url = `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${item}&limit=${limit}`;
   const urlTrending = `https://api.giphy.com/v1/gifs/trending?api_key=${key}&limit=${limit}`;
 

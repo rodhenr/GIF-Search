@@ -6,7 +6,7 @@ describe("finding gifs", () => {
       .contains(/procurar/i)
       .click();
     cy.get(".containerComGifs").should("exist");
-    cy.get(".containerComGifs .gifItem").should("have.length", 5);
+    cy.get(".containerComGifs .gifItem").should("have.length", 20);
     cy.get("button")
       .contains(/ver mais/i)
       .should("have.attr", "href")
@@ -19,6 +19,6 @@ describe("finding gifs", () => {
       .contains(/popular/i)
       .click();
     cy.get(".containerComGifs").should("exist");
-    cy.get(".containerComGifs .gifItem").should("have.length", 5);
+    cy.get(".containerComGifs .gifItem").should("have.length", 20);
   });
 });
