@@ -13,7 +13,7 @@ function Gifs({ data, trending, anterior }) {
             <p>
               Você pesquisou por: <span>{anterior.toUpperCase()}</span>
             </p>
-            <p>
+            <p className="numberElementsInfo">
               Exibindo <span>{data.length}</span> resultados
             </p>
           </div>
@@ -27,7 +27,7 @@ function Gifs({ data, trending, anterior }) {
             ))}
           </div>
           <div className="verMais">
-            <button>
+            <button id="verMais">
               <a
                 href={`https://giphy.com/search/${anterior}`}
                 target="_blank"
@@ -40,8 +40,8 @@ function Gifs({ data, trending, anterior }) {
         </>
       ) : trending.length > 0 ? (
         <div className="containerComGifs">
-          {trending.map((i) => (
-            <div className="gifItem">
+          {trending.map((i, key) => (
+            <div className="gifItem" key={key}>
               <a href={i.bitly_gif_url} target="_blank" rel="noreferrer">
                 <img src={i.images.downsized.url} alt="gif" />
               </a>

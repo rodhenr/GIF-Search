@@ -14,7 +14,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [anterior, setAnterior] = useState("");
 
-  const limit = 25;
+  const limit = 5;
   const url = `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${item}&limit=${limit}`;
   const urlTrending = `https://api.giphy.com/v1/gifs/trending?api_key=${key}&limit=${limit}`;
 
@@ -23,30 +23,28 @@ function App() {
     setItem(text);
   }
 
-  function getGif() {
+  async function getGif() {
     if (item === "" || item === anterior) {
       return;
     } else {
-      setLoading(true);
-      axios.get(url).then((response) => {
-        const newData = response.data.data;
-        setData([...newData]);
-      });
       setData([]);
       setTrending([]);
+      setLoading(true);
+      const resp = await axios.get(url);
+      setData([...resp.data.data]);
       setAnterior(item);
     }
-    setTimeout(() => setLoading(false), 1500);
+    setLoading(false);
   }
 
-  function getTrending() {
-    setLoading(true);
+  async function getTrending() {
+    setAnterior("");
     setData([]);
-    axios.get(urlTrending).then((response) => {
-      const newData = response.data.data;
-      setTrending([...newData]);
-    });
-    setTimeout(() => setLoading(false), 1500);
+    setTrending([]);
+    setLoading(true);
+    const resp = await axios.get(urlTrending);
+    setTrending([...resp.data.data]);
+    setLoading(false);
   }
 
   return (

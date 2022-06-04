@@ -11,22 +11,23 @@ function Search({ handleChange, item, getGif, getTrending }) {
 
   return (
     <div className="containerSearch">
-      <h1>GIF SEARCH</h1>
+      <h1>
+        <a href="/">GIF SEARCH</a>
+      </h1>
       <div className="search-info">
         <input
           type="text"
-          name=""
-          id=""
+          name="search"
           onChange={handleChange}
           onKeyDown={(e) => handleEnter(e)}
           value={item}
           placeholder="Procure por algum GIF"
         />
-        <div className="botoes">
-          <button className="botaoUm" onClick={getGif}>
+        <div className="buttonsContainer">
+          <button className="searchButton" onClick={getGif}>
             PROCURAR
           </button>
-          <button className="botaoDois" onClick={getTrending}>
+          <button className="popularButton" onClick={getTrending}>
             POPULARES
           </button>
         </div>
