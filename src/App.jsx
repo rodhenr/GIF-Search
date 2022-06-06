@@ -9,60 +9,51 @@ import "./styles/App.scss";
 
 function App() {
   const [data, setData] = useState([]);
-  const [trending, setTrending] = useState([]);
-  const [item, setItem] = useState("");
+  const [item, setItem] = useState({ atual: "", anterior: "" });
   const [loading, setLoading] = useState(false);
-  const [anterior, setAnterior] = useState("");
 
   const limit = 20;
-  const url = `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${item}&limit=${limit}`;
-  const urlTrending = `https://api.giphy.com/v1/gifs/trending?api_key=${key}&limit=${limit}`;
+  const urlProcura = `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${item.atual}&limit=${limit}`;
+  const urlPopular = `https://api.giphy.com/v1/gifs/trending?api_key=${key}&limit=${limit}`;
 
   function handleChange(e) {
-    const text = e.target.value;
-    setItem(text);
+    setItem({ ...item, atual: e.target.value });
   }
 
-  async function getGif() {
-    if (item === "" || item === anterior) {
-      return;
-    } else {
-      setData([]);
-      setTrending([]);
+  async function getGif(type) {
+    if (
+      (type === "Procurar" &&
+        item.atual !== "" &&
+        item.atual !== item.anterior) ||
+      (type === "Popular" && item.anterior !== "Popular")
+    ) {
       setLoading(true);
-      const resp = await axios.get(url);
-      setData([...resp.data.data]);
-      setAnterior(item);
+      if (type === "Procurar") {
+        setItem({ ...item, anterior: item.atual });
+        const resp = await axios.get(urlProcura);
+        setData([...resp.data.data]);
+      } else {
+        setItem({ ...item, anterior: "Popular" });
+        const resp = await axios.get(urlPopular);
+        setData([...resp.data.data]);
+      }
+      setLoading(false);
+    } else {
+      return;
     }
-    setLoading(false);
-  }
-
-  async function getTrending() {
-    setAnterior("");
-    setData([]);
-    setTrending([]);
-    setLoading(true);
-    const resp = await axios.get(urlTrending);
-    setTrending([...resp.data.data]);
-    setLoading(false);
   }
 
   return (
     <div className="containerApp">
-      <Search
-        handleChange={handleChange}
-        getGif={getGif}
-        item={item}
-        getTrending={getTrending}
-      />
-      {loading ? (
+      <Search handleChange={handleChange} getGif={getGif} item={item} />
+      {loading && (
         <div className="containerLoader">
           <div className="loader"></div>
           <p>Carregando</p>
         </div>
-      ) : null}
+      )}
       <div className={loading ? "hidden" : null}>
-        <Gifs data={data} trending={trending} anterior={anterior} />
+        <Gifs data={data} item={item} />
       </div>
     </div>
   );

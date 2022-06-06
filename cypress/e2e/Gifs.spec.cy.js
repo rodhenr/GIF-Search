@@ -1,24 +1,14 @@
 describe("finding gifs", () => {
-  it("should type a search item, find it and them check if the Ver Mais button have the right href", () => {
+  it("deve renderizar os gifs de acordo com o termo digitado após o usuário clicar em PROCURAR. Quando o botão POPULAR for clicado, deve exibir os gifs POPULARES", () => {
     cy.visit("/");
-    cy.get('input[name="search"]').type("react");
-    cy.get("button")
-      .contains(/procurar/i)
-      .click();
-    cy.get(".containerComGifs").should("exist");
-    cy.get(".containerComGifs .gifItem").should("have.length", 20);
-    cy.get("button")
-      .contains(/ver mais/i)
-      .should("have.attr", "href")
-      .and("eq", "https://giphy.com/search/react");
-  });
-
-  it("should search for popular gifs", () => {
-    cy.visit("/");
-    cy.get("button")
-      .contains(/popular/i)
-      .click();
-    cy.get(".containerComGifs").should("exist");
-    cy.get(".containerComGifs .gifItem").should("have.length", 20);
+    cy.get('[data-cy="input"]').type("react");
+    cy.checkGifs("search");
+    cy.get('[data-cy="see-more"]').should(
+      "have.attr",
+      "href",
+      "https://giphy.com/search/react"
+    );
+    cy.get('[data-cy="home"]').click();
+    cy.checkGifs("popular");
   });
 });
