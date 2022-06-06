@@ -11,10 +11,11 @@ function Gifs({ data, item }) {
         <>
           <div className="containerSearchInfo">
             <p>
-              Você pesquisou por: <span>{item.anterior.toUpperCase()}</span>
+              Você pesquisou por:{" "}
+              <span data-cy="item-searched">{item.anterior.toUpperCase()}</span>
             </p>
             <p className="numberElementsInfo">
-              Exibindo <span>{data.length}</span> resultados
+              Exibindo <span data-cy="item-qtd">{data.length}</span> resultados
             </p>
           </div>
           <div className="containerComGifs" data-cy="have-gifs">
