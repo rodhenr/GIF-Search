@@ -26,7 +26,7 @@ function App() {
       if (type === "Procurar") {
         setItem({ ...item, anterior: item.atual });
         const resp = await axios.get(
-          "https://backend-weather-rod.herokuapp.com/search",
+          "https://backend-gif-rod.herokuapp.com/search",
           {
             params: {
               item: item.atual,
@@ -38,7 +38,7 @@ function App() {
       } else {
         setItem({ ...item, anterior: "Popular" });
         const resp = await axios.get(
-          "https://backend-weather-rod.herokuapp.com/trending"
+          "https://backend-gif-rod.herokuapp.com/trending"
         );
         setData([...resp.data.data]);
       }
