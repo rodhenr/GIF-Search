@@ -3,7 +3,6 @@ import axios from "axios";
 
 import Gifs from "./components/Gifs";
 import Search from "./components/Search";
-import key from "./components/Key";
 
 import "./styles/App.scss";
 
@@ -11,10 +10,6 @@ function App() {
   const [data, setData] = useState([]);
   const [item, setItem] = useState({ atual: "", anterior: "" });
   const [loading, setLoading] = useState(false);
-
-  const limit = 20;
-  const urlProcura = `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${item.atual}&limit=${limit}`;
-  const urlPopular = `https://api.giphy.com/v1/gifs/trending?api_key=${key}&limit=${limit}`;
 
   function handleChange(e) {
     setItem({ ...item, atual: e.target.value });
@@ -30,11 +25,21 @@ function App() {
       setLoading(true);
       if (type === "Procurar") {
         setItem({ ...item, anterior: item.atual });
-        const resp = await axios.get(urlProcura);
+        const resp = await axios.get(
+          "https://backend-weather-rod.herokuapp.com/search",
+          {
+            params: {
+              item: item.atual,
+              limit: 20,
+            },
+          }
+        );
         setData([...resp.data.data]);
       } else {
         setItem({ ...item, anterior: "Popular" });
-        const resp = await axios.get(urlPopular);
+        const resp = await axios.get(
+          "https://backend-weather-rod.herokuapp.com/trending"
+        );
         setData([...resp.data.data]);
       }
       setLoading(false);
