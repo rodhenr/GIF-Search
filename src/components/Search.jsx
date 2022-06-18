@@ -16,7 +16,7 @@ function Search({ handleChange, item, getGif }) {
   return (
     <div className="containerSearch">
       <h1 data-cy="home">
-        <a href="/">GIF SEARCH</a>
+        <a href="/GIF-Search/">GIF SEARCH</a>
       </h1>
       <div className="search-info">
         <input
