@@ -10,6 +10,8 @@ function App() {
   const [data, setData] = useState([]);
   const [item, setItem] = useState({ atual: "", anterior: "" });
   const [loading, setLoading] = useState(false);
+  const { REACT_APP_BASE_URL } = process.env;
+  const baseUrl = REACT_APP_BASE_URL || "http://localhost:8080/";
 
   function handleChange(e) {
     setItem({ ...item, atual: e.target.value });
@@ -25,20 +27,17 @@ function App() {
       setLoading(true);
       if (type === "Procurar") {
         setItem({ ...item, anterior: item.atual });
-        const resp = await axios.get(
-          "https://backend-gif-rod.herokuapp.com/search",
-          {
-            params: {
-              item: item.atual,
-              limit: 20,
-            },
-          }
-        );
+        const resp = await axios.get(`${baseUrl}search`, {
+          params: {
+            item: item.atual,
+            limit: 20,
+          },
+        });
         setData([...resp.data.data]);
       } else {
         setItem({ ...item, anterior: "Popular" });
         const resp = await axios.get(
-          "https://backend-gif-rod.herokuapp.com/trending"
+          `${baseUrl}trending`
         );
         setData([...resp.data.data]);
       }
