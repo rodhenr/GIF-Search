@@ -2,6 +2,10 @@
 
 Essa é uma aplicação que usa a API do [Giphy](https://giphy.com/) para procurar por gifs de acordo com o termo digitado pelo usuário.
 
+<p align="center">
+<img alt="gif" src="https://media3.giphy.com/media/nE0RX5y5KAtf3tZSOa/giphy.gif?cid=790b76112fa6720521f27f25e9945de4af3d80d229a6046f&rid=giphy.gif&ct=g" />
+</p>
+
 ## :man_technologist: Tecnologias
 
 Para este projeto foram utilizadas as seguintes tecnologias:
@@ -17,6 +21,7 @@ Para este projeto foram utilizadas as seguintes tecnologias:
 Para replicar esse projeto dno seu computador siga os passos abaixo:
 
 ## BACK-END
+
 - Você deve fazer o download/clone [deste](https://github.com/rodhenr/GIF-Search-BackEnd) repositório da parte backend da aplicação e o abrir na sua IDE
 
 ```
