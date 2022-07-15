@@ -29,4 +29,4 @@ Caso tenha alguma dúvida ou alguma sugestão fico no aguardo da sua mensagem!
 
 ## :computer: Live Demo
 
-Para visualização de uma versão demo do site clique [aqui](https://rodhenr.github.io/GIF-Search/).
+Para visualização de uma versão demo do site clique [aqui](https://rodhenr.github.io/GIF-Search-FrontEnd/).
