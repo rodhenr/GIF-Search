@@ -10,6 +10,14 @@ Essa é uma aplicação que usa a API do [Giphy](https://giphy.com/) para procur
 
 Para este projeto foram utilizadas as seguintes tecnologias:
 
+### BACK-END
+
+- [Node](https://nodejs.org/en/)
+- [Express](https://expressjs.com/pt-br/)
+- [Dotenv](https://www.npmjs.com/package/dotenv)
+
+### FRONT-END
+
 - [React](https://pt-br.reactjs.org/)
 - [SASS](https://sass-lang.com/)
 - [Cypress](https://www.cypress.io/)
