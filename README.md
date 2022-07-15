@@ -20,7 +20,7 @@ Para este projeto foram utilizadas as seguintes tecnologias:
 
 Para replicar esse projeto dno seu computador siga os passos abaixo:
 
-## BACK-END
+### BACK-END
 
 - Você deve fazer o download/clone [deste](https://github.com/rodhenr/GIF-Search-BackEnd) repositório da parte backend da aplicação e o abrir na sua IDE
 
@@ -31,7 +31,7 @@ Para replicar esse projeto dno seu computador siga os passos abaixo:
 4. Rode o servidor com o comando "npm run dev"
 ```
 
-## FRONT-END
+### FRONT-END
 
 - Você deve fazer o download/clone deste repositório e o abrir na sua IDE.
 
