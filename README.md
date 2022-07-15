@@ -14,14 +14,28 @@ Para este projeto foram utilizadas as seguintes tecnologias:
 
 ## :dvd: Como replicar este projeto
 
-Para replicar esse projeto de forma local no seu computador siga os passos abaixo:
+Para replicar esse projeto dno seu computador siga os passos abaixo:
 
-- Você deve fazer o download/clone deste repositório para seu computador e o abrir na sua IDE.
+## BACK-END
+- Você deve fazer o download/clone [deste](https://github.com/rodhenr/GIF-Search-BackEnd) repositório da parte backend da aplicação e o abrir na sua IDE
+
+```
+1. Execute o comando npm i para instalar as dependências do projeto
+2. Para conseguir uma API KEY do Giphy faça o cadastro em https://developers.giphy.com/ e gere uma nova chave no dashboard
+3. Crie um arquivo .env na raiz do projeto e dentro adicione a linha "SECRET_KEY=suachaveaqui", onde "suachaveaqui" é a chave gerada na sua conta do Giphy. Uma outra alternativa é abrir o arquivo "index.js" e na const key adicionar a sua API KEY.
+4. Rode o servidor com o comando "npm run dev"
+```
+
+## FRONT-END
+
+- Você deve fazer o download/clone deste repositório e o abrir na sua IDE.
 
 ```
 1. Execute o comando npm i para instalar as dependências do projeto
 2. Execute o comando npm start para rodar localmente na porta 3000
 ```
+
+Com essas configurações você conseguirá rodar localmente este projeto na sua máquina!
 
 ## :grin: Dúvidas ou sugestões?
 
