@@ -15,13 +15,13 @@ Para este projeto foram utilizadas as seguintes tecnologias:
 - [Node](https://nodejs.org/en/)
 - [Express](https://expressjs.com/pt-br/)
 - [Dotenv](https://www.npmjs.com/package/dotenv)
+- [Axios](https://axios-http.com/ptbr/docs/intro)
 
 ### FRONT-END
 
 - [React](https://pt-br.reactjs.org/)
 - [SASS](https://sass-lang.com/)
 - [Cypress](https://www.cypress.io/)
-- [Express](https://expressjs.com/pt-br/)
 - [Axios](https://axios-http.com/ptbr/docs/intro)
 
 ## :dvd: Como replicar este projeto
